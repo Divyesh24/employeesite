@@ -1,0 +1,31 @@
+{% extends 'empInfo/main.html' %}
+{% block content %}
+<div class="container">
+  <table class="table">
+    <thead class="dark">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Salary</th>
+      </tr>
+      </thead>
+  
+      {% for info in infos %}
+    
+      <tbody>
+      <tr>
+        <td><a href="{% url 'info_detail' pk=info.pk %}">{{info.firstName}}</a></td>
+        <td>{{info.lastName}}</td>
+        <td>{{info.email}}</td>
+        <td>{{info.mobileNumber}}</td>
+        <td>{{info.salary}}</td>
+      </tr>
+      </tbody>
+
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'empInfo/main.html' %}
+{% block content %}
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <label>Username:</label> {{ form.username }}<br>
+            <label>Password:</label> {{ form.password }}<br>
+            <button type="submit">login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
